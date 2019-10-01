@@ -68,7 +68,7 @@ height:40px;" value="Login">
 height:40px;" value="Reset"><br>
 <br>
 
-<a href='Register.jsp'> New user..?</a href>
+<a href='Pract.jsp'> New user..?</a href>
 
 </center>
 </form>

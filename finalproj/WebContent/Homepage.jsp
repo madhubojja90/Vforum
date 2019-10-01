@@ -67,14 +67,14 @@ int empid=(Integer) request.getAttribute("empid");
 <div class= "welcome">
 <h2>welcome  to virtusa!!</h2>
 </div>
-<form action="MyQuestion.jsp" method="post">
+<%-- <form action="MyQuestion.jsp" method="post">
      
        <input type="hidden" name="qid" value="<%=emp.getEmpid()%>">
 	   <input type="submit" value="ViewAllAnswers"/>
 		
 	  </form>	
 
-
+ --%>
 
 </body>
 </html>

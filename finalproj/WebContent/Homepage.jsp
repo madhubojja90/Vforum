@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+     <%@page import="com.vir.model.Question"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -43,6 +47,10 @@
 
 </head>
 <body>
+<%Question emp=(Question)request.getAttribute("info");
+int empid=(Integer) request.getAttribute("empid");
+
+%>
 <h1 align="center">Vforum</h1>
  
  <hr>
@@ -51,7 +59,7 @@
   <a href="addQuestion.jsp">addQuestion</a>
   <a href="EmpEditServlet">profile</a>
   <a href="ViewQuestion.jsp">View Questions</a>
-   <a href="MyQuestion.jsp">myquestions</a>
+
   <a href="EmpLogoutServlet">Logout</a>
  
 </div>
@@ -59,7 +67,12 @@
 <div class= "welcome">
 <h2>welcome  to virtusa!!</h2>
 </div>
-
+<form action="MyQuestion.jsp" method="post">
+     
+       <input type="hidden" name="qid" value="<%=emp.getEmpid()%>">
+	   <input type="submit" value="ViewAllAnswers"/>
+		
+	  </form>	
 
 
 

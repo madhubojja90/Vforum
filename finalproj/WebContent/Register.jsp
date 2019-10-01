@@ -7,7 +7,8 @@ pageEncoding="ISO-8859-1"%>
 <title>Register</title>
 <script> 
 function validate()
-{ 
+{
+var Empid=  document.form.Empid.value;
 var fullname = document.form.fullname.value;
 var email = document.form.email.value;
 var username = document.form.username.value; 
@@ -33,9 +34,14 @@ else if(password.length<6)
 alert("Password must be at least 6 characters long."); 
 return false; 
 } 
-else if (password!=conpassword)
+else if (Empid.length<7 )
 { 
-alert("Confirm Password should match with the Password"); 
+alert("enter valid employee id"); 
+return false; 
+}
+else if(password.length<6)
+{ 
+alert("Password must be at least 6 characters long."); 
 return false; 
 } 
 } 
@@ -47,7 +53,7 @@ return false;
 <table align="center">
 <tr>
 <td>Empid</td>
-<td><input type="text" name="Empid" /></td>
+<td><input type="text" name="Empid" maxlength="7" minlength="7"/></td>
 </tr>
 <tr>
 <td>Full Name</td>
@@ -55,7 +61,7 @@ return false;
 </tr>
 <tr>
 <td>Email</td>
-<td><input type="text" name="email" /></td>
+<td><input type="text" name="email" pattern="[a-z0-9._%+-]+@[virtusa]+\.[a-z]{2,}$" /></td>
 </tr>
 <tr>
 <td>Username</td>

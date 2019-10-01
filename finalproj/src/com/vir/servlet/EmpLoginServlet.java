@@ -43,7 +43,7 @@ String userValidate = es.authenticateEmp(loginBean);
 if(userValidate.equals("SUCCESS")) 
 {
 request.setAttribute("empid", empid); 
-request.getRequestDispatcher("/Homepage.html").forward(request, response);
+request.getRequestDispatcher("/Homepage.jsp").forward(request, response);
 }
 else
 {

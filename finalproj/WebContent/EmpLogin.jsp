@@ -26,7 +26,7 @@ function validate()
 { 
  var username = document.form.username.value; 
  var password = document.form.password.value;
- 
+ var empid=document.form.empid.value;
  if (username==null || username=="")
  { 
  alert("Username cannot be blank"); 

@@ -133,7 +133,7 @@ List<Question> list=new ArrayList<Question>();
         
         try{  
         	Connection con = DBConnection.createConnection(); 
-            PreparedStatement ps=con.prepareStatement("select * from  vforum.question where empid=?");  
+            PreparedStatement ps=con.prepareStatement("select qid,qdesc  vforum.question where empid=?");  
             ps.setInt(1, empid);
             ResultSet rs=ps.executeQuery();  
             while(rs.next()){  

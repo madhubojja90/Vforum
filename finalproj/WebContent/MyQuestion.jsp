@@ -1,45 +1,50 @@
-<!DOCTYPE html>  
-  
-<html>  
-<head>  
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">  
-<title>View Users</title>  
-</head>  
-<body>  
-  
-<%@page import="com.vir.model.*,com.vir.service.*,java.util.*"%>  
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
-  
-<h1>answer List</h1>  
-  
-<%  
+<!DOCTYPE html>
 
-QuestionServiceInterface qs= new QuestionInterfaceImpl();
-int empid=Integer.parseInt(request.getParameter("empid"));
-List<Question> list=qs.getQuestionByEmpid(empid);
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>View Questions</title>
+</head>
+<body>
 
-request.setAttribute("list",list);
-%>  
- <table>
- <tr><th>qid</th><th>empid</th><th>qdesc</th></tr>
- <%
- for(int i=0;i<list.size();i++)
- {
- %>
- <tr>
- <td><%= list.get(i).getQid()%></td> 
-  <td><%= list.get(i).getEmpid()%></td> 
-  <td><%= list.get(i).getQdesc()%></td> 
-    
- 
-  </tr>
- <%
- }
- %>
-</table>
- 
+	<%@page import="com.vir.model.*,com.vir.service.*,java.util.*"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%-- <table border="1" width="90%">  
+	<h1>answer List</h1>
+	<%
+		int empid = (Integer) session.getAttribute("empid");
+	%>
+
+	<%
+		QuestionServiceInterface qs = new QuestionInterfaceImpl();
+
+		List<Question> list = qs.getQuestionByEmpid(empid);
+
+		request.setAttribute("list", list);
+	%>
+
+
+	<table border="1" width="90%">
+		<tr>
+			<th>qid</th>
+			
+			<th>qdesc</th>
+			<th>Edit</th>
+		</tr>
+		<c:forEach items="${list}" var="u">
+			<tr>
+				<td>${u.getQid()}</td>
+				
+				<td>${u.getQdesc()}</td>
+				<td><a href="EditQuestionServlet?qid=${u.getQid()}">Edit</a></td>
+		</c:forEach>
+	</table>
+	<br />
+	<a href="addQuestion.jsp">Add Question</a>
+
+
+
+	<%-- <table border="1" width="90%">  
 <tr><th>qid</th><th>empid</th><th>qdesc</th></tr>  
 
 <c:forEach items="${list}" var="u">  
@@ -47,7 +52,8 @@ request.setAttribute("list",list);
   
 </c:forEach>  
 </table>   --%>
-<br/><a href="addQuestion.html">Add Question</a>  
-  
-</body>  
-</html>  
+	<br />
+	
+
+</body>
+</html>

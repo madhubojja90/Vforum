@@ -25,7 +25,7 @@
 
 
 	<table border="1" width="90%">
-		<tr>
+		<tr bgcolor="red">
 			<th>qid</th>
 			
 			<th>qdesc</th>

@@ -15,7 +15,7 @@
 <table align=center>
 <tr><td>empid:</td><td><input type="text" name="empid" value=<%=empid %> readonly/></td></tr>
 <tr><td></td><td><input type="hidden" name="qid"/></td></tr>
-<tr><td>qdes:</td><td><input type="textarea" rows="4" cols="50"name="qdesc"/></td></tr>
+<tr><td>qdesc:</td><td><textarea rows="5" cols="80"></textarea></td></tr>
 <tr><td colspan="2"><input type="submit" value="post Question"/></td></tr>
  
 </form>
